@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Poupa Aí</string>
+
+    <!-- Barra superior -->
+    <string name="greeting">Hello!</string>
+    <string name="profile_photo">User profile</string>
+
+    <!-- Saúde financeira -->
+    <string name="financial_health">Financial health</string>
+    <string name="health_good">On track</string>
+    <string name="health_warning">Attention</string>
+    <string name="health_critical">In the red</string>
+    <string name="left_this_month">Left this month</string>
+    <string name="income">Income</string>
+    <string name="expenses">Expenses</string>
+
+    <!-- Indicadores -->
+    <string name="today_rates">Today\'s rates</string>
+    <string name="per_year">per year</string>
+    <string name="updated_at">Updated on %1$s</string>
+
+    <!-- Metas -->
+    <string name="your_goals">Your goals</string>
+    <string name="goal_progress">%1$d%% of the goal</string>
+    <string name="goal_amount">%1$s of %2$s</string>
+
+    <!-- Orçamento -->
+    <string name="budget_title">Budget</string>
+    <string name="monthly_income">Monthly income</string>
+    <string name="income_hint">How much do you earn per month?</string>
+    <string name="monthly_expenses">Monthly expenses</string>
+    <string name="expense_name">What did you spend on?</string>
+    <string name="expense_value">Amount</string>
+    <string name="add_expense">Add expense</string>
+    <string name="remove_expense">Remove expense</string>
+    <string name="no_expenses">No expenses yet. Add the first one above.</string>
+    <string name="total_expenses">Total expenses</string>
+    <string name="committed_income">%1$d%% of your income is committed</string>
+
+    <!-- Navegação -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_budget">Budget</string>
+    <string name="nav_simulators">Simulators</string>
+    <string name="nav_goals">Goals</string>
+    <string name="nav_profile">Profile</string>
+    <string name="add_entry">Add entry</string>
+</resources>

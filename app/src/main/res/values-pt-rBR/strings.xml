@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poupa Aí</string>
+
+    <!-- Barra superior -->
+    <string name="greeting">Olá!</string>
+    <string name="profile_photo">Perfil do usuário</string>
+
+    <!-- Saúde financeira -->
+    <string name="financial_health">Saúde financeira</string>
+    <string name="health_good">No azul</string>
+    <string name="health_warning">Atenção</string>
+    <string name="health_critical">No vermelho</string>
+    <string name="left_this_month">Sobra deste mês</string>
+    <string name="income">Renda</string>
+    <string name="expenses">Gastos</string>
+
+    <!-- Indicadores -->
+    <string name="today_rates">Taxas de hoje</string>
+    <string name="per_year">ao ano</string>
+    <string name="updated_at">Atualizado em %1$s</string>
+
+    <!-- Metas -->
+    <string name="your_goals">Suas metas</string>
+    <string name="goal_progress">%1$d%% da meta</string>
+    <string name="goal_amount">%1$s de %2$s</string>
+
+    <!-- Orçamento -->
+    <string name="budget_title">Orçamento</string>
+    <string name="monthly_income">Renda mensal</string>
+    <string name="income_hint">Quanto você recebe por mês?</string>
+    <string name="monthly_expenses">Gastos do mês</string>
+    <string name="expense_name">Com o que você gastou?</string>
+    <string name="expense_value">Valor</string>
+    <string name="add_expense">Adicionar gasto</string>
+    <string name="remove_expense">Remover gasto</string>
+    <string name="no_expenses">Nenhum gasto cadastrado. Adicione o primeiro aí em cima.</string>
+    <string name="total_expenses">Total de gastos</string>
+    <string name="committed_income">%1$d%% da sua renda está comprometida</string>
+
+    <!-- Navegação -->
+    <string name="nav_dashboard">Painel</string>
+    <string name="nav_budget">Orçamento</string>
+    <string name="nav_simulators">Simuladores</string>
+    <string name="nav_goals">Metas</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="add_entry">Novo lançamento</string>
+</resources>

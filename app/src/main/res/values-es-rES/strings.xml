@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poupa Aí</string>
+
+    <!-- Barra superior -->
+    <string name="greeting">¡Hola!</string>
+    <string name="profile_photo">Perfil del usuario</string>
+
+    <!-- Saúde financeira -->
+    <string name="financial_health">Salud financiera</string>
+    <string name="health_good">En verde</string>
+    <string name="health_warning">Atención</string>
+    <string name="health_critical">En rojo</string>
+    <string name="left_this_month">Sobra este mes</string>
+    <string name="income">Ingreso</string>
+    <string name="expenses">Gastos</string>
+
+    <!-- Indicadores -->
+    <string name="today_rates">Tasas de hoy</string>
+    <string name="per_year">al año</string>
+    <string name="updated_at">Actualizado el %1$s</string>
+
+    <!-- Metas -->
+    <string name="your_goals">Tus metas</string>
+    <string name="goal_progress">%1$d%% de la meta</string>
+    <string name="goal_amount">%1$s de %2$s</string>
+
+    <!-- Orçamento -->
+    <string name="budget_title">Presupuesto</string>
+    <string name="monthly_income">Ingreso mensual</string>
+    <string name="income_hint">¿Cuánto recibes por mes?</string>
+    <string name="monthly_expenses">Gastos del mes</string>
+    <string name="expense_name">¿En qué gastaste?</string>
+    <string name="expense_value">Valor</string>
+    <string name="add_expense">Añadir gasto</string>
+    <string name="remove_expense">Eliminar gasto</string>
+    <string name="no_expenses">Aún no hay gastos. Añade el primero arriba.</string>
+    <string name="total_expenses">Total de gastos</string>
+    <string name="committed_income">%1$d%% de tus ingresos está comprometido</string>
+
+    <!-- Navegação -->
+    <string name="nav_dashboard">Panel</string>
+    <string name="nav_budget">Presupuesto</string>
+    <string name="nav_simulators">Simuladores</string>
+    <string name="nav_goals">Metas</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="add_entry">Nuevo registro</string>
+</resources>
