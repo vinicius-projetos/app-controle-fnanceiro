@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 sealed class Rota(val caminho: String) {
     data object Painel : Rota("painel")
     data object Orcamento : Rota("orcamento")
+    data object CalculadoraDividas : Rota("calculadora_dividas")
 }
 
 /**
