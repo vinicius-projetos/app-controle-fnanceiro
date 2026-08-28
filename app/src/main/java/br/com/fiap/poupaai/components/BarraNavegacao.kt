@@ -28,24 +28,35 @@ fun BarraNavegacao(
         containerColor = MaterialTheme.colorScheme.surface,
         tonalElevation = 0.dp
     ) {
+
         ItemNavegacao(
             icone = Icons.Default.Home,
             rotulo = stringResource(id = R.string.nav_dashboard),
             selecionado = rotaAtual == Rota.Painel.caminho,
-            aoClicar = { aoNavegar(Rota.Painel) }
+            aoClicar = {
+                aoNavegar(Rota.Painel)
+            }
         )
+
         ItemNavegacao(
             icone = Icons.Default.AccountBalanceWallet,
             rotulo = stringResource(id = R.string.nav_budget),
             selecionado = rotaAtual == Rota.Orcamento.caminho,
-            aoClicar = { aoNavegar(Rota.Orcamento) }
+            aoClicar = {
+                aoNavegar(Rota.Orcamento)
+            }
         )
-        // Simuladores e Metas ganham rota quando as telas forem construídas.
+
         ItemNavegacao(
             icone = Icons.AutoMirrored.Filled.TrendingUp,
             rotulo = stringResource(id = R.string.nav_simulators),
-            habilitado = false
+            selecionado = rotaAtual == Rota.CalculadoraDividas.caminho,
+            aoClicar = {
+                aoNavegar(Rota.CalculadoraDividas)
+            }
         )
+
+        // Metas ganhará uma rota quando a tela for construída.
         ItemNavegacao(
             icone = Icons.Default.Flag,
             rotulo = stringResource(id = R.string.nav_goals),
@@ -66,8 +77,18 @@ private fun RowScope.ItemNavegacao(
         selected = selecionado,
         enabled = habilitado,
         onClick = aoClicar,
-        icon = { Icon(imageVector = icone, contentDescription = rotulo) },
-        label = { Text(text = rotulo, style = MaterialTheme.typography.bodySmall) },
+        icon = {
+            Icon(
+                imageVector = icone,
+                contentDescription = rotulo
+            )
+        },
+        label = {
+            Text(
+                text = rotulo,
+                style = MaterialTheme.typography.bodySmall
+            )
+        },
         colors = NavigationBarItemDefaults.colors(
             selectedIconColor = MaterialTheme.colorScheme.primary,
             selectedTextColor = MaterialTheme.colorScheme.primary,
