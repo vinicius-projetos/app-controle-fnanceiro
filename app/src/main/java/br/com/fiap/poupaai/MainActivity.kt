@@ -11,6 +11,8 @@ import androidx.navigation.compose.rememberNavController
 import br.com.fiap.poupaai.navigation.Rota
 import br.com.fiap.poupaai.screens.HomeScreen
 import br.com.fiap.poupaai.screens.OrcamentoScreen
+import br.com.fiap.poupaai.screens.MetasScreen
+import br.com.fiap.poupaai.screens.HistóricoScreen
 import br.com.fiap.poupaai.ui.theme.PoupaAiTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,5 +37,8 @@ fun PoupaAiApp() {
     ) {
         composable(Rota.Painel.caminho) { HomeScreen(navController) }
         composable(Rota.Orcamento.caminho) { OrcamentoScreen(navController) }
+        composable(Rota.Metas.caminho) { MetasScreen(navController) }
+        composable(Rota.Historico.caminho) { HistóricoScreen(navController) }
     }
 }
+

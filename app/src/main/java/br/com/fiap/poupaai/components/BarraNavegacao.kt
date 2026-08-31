@@ -40,16 +40,17 @@ fun BarraNavegacao(
             selecionado = rotaAtual == Rota.Orcamento.caminho,
             aoClicar = { aoNavegar(Rota.Orcamento) }
         )
-        // Simuladores e Metas ganham rota quando as telas forem construídas.
         ItemNavegacao(
             icone = Icons.AutoMirrored.Filled.TrendingUp,
             rotulo = stringResource(id = R.string.nav_simulators),
-            habilitado = false
+            selecionado = rotaAtual == Rota.Historico.caminho,
+            aoClicar = { aoNavegar(Rota.Historico) }
         )
         ItemNavegacao(
             icone = Icons.Default.Flag,
             rotulo = stringResource(id = R.string.nav_goals),
-            habilitado = false
+            selecionado = rotaAtual == Rota.Metas.caminho,
+            aoClicar = { aoNavegar(Rota.Metas) }
         )
     }
 }

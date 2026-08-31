@@ -3,8 +3,10 @@ package br.com.fiap.poupaai.navigation
 import androidx.navigation.NavController
 
 sealed class Rota(val caminho: String) {
-    data object Painel : Rota("painel")
-    data object Orcamento : Rota("orcamento")
+    data object Painel : Rota(caminho = "painel")
+    data object Orcamento : Rota(caminho = "orçamento")
+    data object Metas : Rota(caminho = "metas")
+    data object Historico : Rota(caminho = "histórico")
 }
 
 /**
@@ -12,7 +14,7 @@ sealed class Rota(val caminho: String) {
  * quando o usuário volta para uma aba já visitada.
  */
 fun NavController.navegarPara(rota: Rota) {
-    navigate(rota.caminho) {
+    navigate(route = rota.caminho) {
         popUpTo(graph.startDestinationId) { saveState = true }
         launchSingleTop = true
         restoreState = true
