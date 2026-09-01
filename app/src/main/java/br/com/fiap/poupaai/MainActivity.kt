@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.fiap.poupaai.navigation.Rota
+import br.com.fiap.poupaai.screens.CalculadoraDividasScreen
 import br.com.fiap.poupaai.screens.HomeScreen
 import br.com.fiap.poupaai.screens.OrcamentoScreen
 import br.com.fiap.poupaai.screens.MetasScreen
@@ -19,6 +20,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             PoupaAiTheme {
                 PoupaAiApp()
@@ -29,16 +31,27 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PoupaAiApp() {
+
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
         startDestination = Rota.Painel.caminho
     ) {
-        composable(Rota.Painel.caminho) { HomeScreen(navController) }
-        composable(Rota.Orcamento.caminho) { OrcamentoScreen(navController) }
-        composable(Rota.Metas.caminho) { MetasScreen(navController) }
-        composable(Rota.Historico.caminho) { HistóricoScreen(navController) }
+        composable(Rota.Painel.caminho) {
+            HomeScreen(navController) }
+
+        composable(Rota.Orcamento.caminho) {
+            OrcamentoScreen(navController) }
+
+        composable(Rota.Metas.caminho) {
+            MetasScreen(navController) }
+
+        composable(Rota.Historico.caminho) {
+            HistóricoScreen(navController) }
+
+        composable(Rota.CalculadoraDividas.caminho) {
+            CalculadoraDividasScreen(navController)
+        }
     }
 }
-

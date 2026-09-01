@@ -84,7 +84,7 @@ fun MetasScreen(navController: NavController) {
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
-                            text = "+ Nova meta",
+                            text = "Nova meta",
                             fontSize = 12.sp,
                             maxLines = 1
                         )

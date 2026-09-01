@@ -41,6 +41,12 @@ fun BarraNavegacao(
             aoClicar = { aoNavegar(Rota.Orcamento) }
         )
         ItemNavegacao(
+            icone = Icons.Default.Flag,
+            rotulo = "Calculadora",
+            selecionado = rotaAtual == Rota.CalculadoraDividas.caminho,
+            aoClicar = { aoNavegar(Rota.CalculadoraDividas) }
+        )
+        ItemNavegacao(
             icone = Icons.AutoMirrored.Filled.TrendingUp,
             rotulo = stringResource(id = R.string.nav_simulators),
             selecionado = rotaAtual == Rota.Historico.caminho,

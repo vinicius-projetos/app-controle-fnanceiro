@@ -3,8 +3,9 @@ package br.com.fiap.poupaai.navigation
 import androidx.navigation.NavController
 
 sealed class Rota(val caminho: String) {
-    data object Painel : Rota(caminho = "painel")
-    data object Orcamento : Rota(caminho = "orçamento")
+    data object Painel : Rota("painel")
+    data object Orcamento : Rota("orçamento")
+    data object CalculadoraDividas : Rota("calculadora_dividas")
     data object Metas : Rota(caminho = "metas")
     data object Historico : Rota(caminho = "histórico")
 }
