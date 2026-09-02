@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "br.com.fiap.poupaai"
+    namespace = "br.com.fiap.edufin"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "br.com.fiap.poupaai"
+        applicationId = "br.com.fiap.edufin"
         minSdk = 28
         targetSdk = 37
         versionCode = 1
@@ -46,6 +46,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)

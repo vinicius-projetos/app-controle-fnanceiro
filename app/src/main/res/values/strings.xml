@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Poupa Aí</string>
+    <string name="app_name">EduFin</string>
 
     <!-- Barra superior -->
     <string name="greeting">Hello!</string>
@@ -18,6 +18,8 @@
     <string name="today_rates">Today\'s rates</string>
     <string name="per_year">per year</string>
     <string name="updated_at">Updated on %1$s</string>
+    <string name="rates_source">Source: BrasilAPI</string>
+    <string name="rates_offline">No connection. Showing the last known rates.</string>
 
     <!-- Metas -->
     <string name="your_goals">Your goals</string>
@@ -37,10 +39,38 @@
     <string name="total_expenses">Total expenses</string>
     <string name="committed_income">%1$d%% of your income is committed</string>
 
+    <!-- Simulador de investimentos -->
+    <string name="simulator_title">Investment simulator</string>
+    <string name="monthly_contribution">Monthly contribution</string>
+    <string name="contribution_hint">How much can you save each month?</string>
+    <string name="where_to_invest">Where to keep the money</string>
+    <string name="rate_summary">%1$s · %2$s per year</string>
+    <string name="projection">Projection</string>
+    <string name="you_save">You save</string>
+    <string name="it_yields">It yields</string>
+    <string name="simulator_disclaimer">Compound interest over today\'s rate. Past returns do not guarantee future results.</string>
+    <string name="year_one">In 1 year</string>
+    <string name="year_many">In %1$d years</string>
+
+    <!-- Calculadora de dívidas -->
+    <string name="debts_title">Debt calculator</string>
+    <string name="debts_intro">Understand how much your debt can really cost.</string>
+    <string name="debt_value">Debt amount</string>
+    <string name="debt_rate">Monthly interest rate</string>
+    <string name="debt_period">Period</string>
+    <string name="debt_months">months</string>
+    <string name="debt_calculate">Calculate debt</string>
+    <string name="debt_result">Simulation result</string>
+    <string name="debt_initial">Initial amount: %1$s</string>
+    <string name="debt_interest">Total interest: %1$s</string>
+    <string name="debt_final">Final amount: %1$s</string>
+    <string name="debt_interest_share">Interest is %1$s%% of the final debt amount.</string>
+
     <!-- Navegação -->
     <string name="nav_dashboard">Dashboard</string>
     <string name="nav_budget">Budget</string>
-    <string name="nav_simulators">Simulators</string>
+    <string name="nav_debts">Debts</string>
+    <string name="nav_invest">Invest</string>
     <string name="nav_goals">Goals</string>
     <string name="nav_profile">Profile</string>
     <string name="add_entry">Add entry</string>

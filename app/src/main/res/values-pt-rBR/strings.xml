@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Poupa Aí</string>
+    <string name="app_name">EduFin</string>
 
     <!-- Barra superior -->
     <string name="greeting">Olá!</string>
@@ -19,6 +19,8 @@
     <string name="today_rates">Taxas de hoje</string>
     <string name="per_year">ao ano</string>
     <string name="updated_at">Atualizado em %1$s</string>
+    <string name="rates_source">Fonte: BrasilAPI</string>
+    <string name="rates_offline">Sem conexão. Mostrando as últimas taxas conhecidas.</string>
 
     <!-- Metas -->
     <string name="your_goals">Suas metas</string>
@@ -38,10 +40,38 @@
     <string name="total_expenses">Total de gastos</string>
     <string name="committed_income">%1$d%% da sua renda está comprometida</string>
 
+    <!-- Simulador de investimentos -->
+    <string name="simulator_title">Simulador de investimentos</string>
+    <string name="monthly_contribution">Aporte mensal</string>
+    <string name="contribution_hint">Quanto dá pra guardar por mês?</string>
+    <string name="where_to_invest">Onde deixar o dinheiro</string>
+    <string name="rate_summary">%1$s · %2$s ao ano</string>
+    <string name="projection">Projeção</string>
+    <string name="you_save">Você guarda</string>
+    <string name="it_yields">Rende</string>
+    <string name="simulator_disclaimer">Juros compostos sobre a taxa de hoje. Rentabilidade passada não garante resultado futuro.</string>
+    <string name="year_one">Em 1 ano</string>
+    <string name="year_many">Em %1$d anos</string>
+
+    <!-- Calculadora de dívidas -->
+    <string name="debts_title">Calculadora de Dívidas</string>
+    <string name="debts_intro">Entenda quanto sua dívida realmente pode custar.</string>
+    <string name="debt_value">Valor da dívida</string>
+    <string name="debt_rate">Taxa de juros mensal</string>
+    <string name="debt_period">Período</string>
+    <string name="debt_months">meses</string>
+    <string name="debt_calculate">Calcular dívida</string>
+    <string name="debt_result">Resultado da simulação</string>
+    <string name="debt_initial">Valor inicial: %1$s</string>
+    <string name="debt_interest">Total de juros: %1$s</string>
+    <string name="debt_final">Valor final: %1$s</string>
+    <string name="debt_interest_share">Os juros representam %1$s%% do valor final da dívida.</string>
+
     <!-- Navegação -->
     <string name="nav_dashboard">Painel</string>
     <string name="nav_budget">Orçamento</string>
-    <string name="nav_simulators">Simuladores</string>
+    <string name="nav_debts">Dívidas</string>
+    <string name="nav_invest">Investir</string>
     <string name="nav_goals">Metas</string>
     <string name="nav_profile">Perfil</string>
     <string name="add_entry">Novo lançamento</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Poupa Aí</string>
+    <string name="app_name">EduFin</string>
 
     <!-- Barra superior -->
     <string name="greeting">¡Hola!</string>
@@ -19,6 +19,8 @@
     <string name="today_rates">Tasas de hoy</string>
     <string name="per_year">al año</string>
     <string name="updated_at">Actualizado el %1$s</string>
+    <string name="rates_source">Fuente: BrasilAPI</string>
+    <string name="rates_offline">Sin conexión. Mostrando las últimas tasas conocidas.</string>
 
     <!-- Metas -->
     <string name="your_goals">Tus metas</string>
@@ -38,10 +40,38 @@
     <string name="total_expenses">Total de gastos</string>
     <string name="committed_income">%1$d%% de tus ingresos está comprometido</string>
 
+    <!-- Simulador de investimentos -->
+    <string name="simulator_title">Simulador de inversiones</string>
+    <string name="monthly_contribution">Aporte mensual</string>
+    <string name="contribution_hint">¿Cuánto puedes guardar por mes?</string>
+    <string name="where_to_invest">Dónde dejar el dinero</string>
+    <string name="rate_summary">%1$s · %2$s al año</string>
+    <string name="projection">Proyección</string>
+    <string name="you_save">Tú guardas</string>
+    <string name="it_yields">Rinde</string>
+    <string name="simulator_disclaimer">Interés compuesto sobre la tasa de hoy. La rentabilidad pasada no garantiza resultados futuros.</string>
+    <string name="year_one">En 1 año</string>
+    <string name="year_many">En %1$d años</string>
+
+    <!-- Calculadora de dívidas -->
+    <string name="debts_title">Calculadora de Deudas</string>
+    <string name="debts_intro">Entiende cuánto puede costar realmente tu deuda.</string>
+    <string name="debt_value">Valor de la deuda</string>
+    <string name="debt_rate">Tasa de interés mensual</string>
+    <string name="debt_period">Período</string>
+    <string name="debt_months">meses</string>
+    <string name="debt_calculate">Calcular deuda</string>
+    <string name="debt_result">Resultado de la simulación</string>
+    <string name="debt_initial">Valor inicial: %1$s</string>
+    <string name="debt_interest">Total de intereses: %1$s</string>
+    <string name="debt_final">Valor final: %1$s</string>
+    <string name="debt_interest_share">Los intereses representan el %1$s%% del valor final de la deuda.</string>
+
     <!-- Navegação -->
     <string name="nav_dashboard">Panel</string>
     <string name="nav_budget">Presupuesto</string>
-    <string name="nav_simulators">Simuladores</string>
+    <string name="nav_debts">Deudas</string>
+    <string name="nav_invest">Invertir</string>
     <string name="nav_goals">Metas</string>
     <string name="nav_profile">Perfil</string>
     <string name="add_entry">Nuevo registro</string>

@@ -1,0 +1,12 @@
+---
+description: Ao encerrar o projeto EduFin, apagar o gerador do PDF
+alwaysApply: true
+---
+
+# Apagar o gerador do PDF no encerramento
+
+Quando o usuário disser que o projeto acabou, que vai entregar, zipar ou fechar a atividade, **apagar** o arquivo `docs/gerar_pdf.py`.
+
+Manter o PDF final (`docs/EduFin-Documentacao.pdf`) e a pasta `docs/prints/`, a menos que ele peça para apagar isso também.
+
+Lembrar o patrão dessa limpeza se ele for empacotar o projeto sem ter apagado o script.
