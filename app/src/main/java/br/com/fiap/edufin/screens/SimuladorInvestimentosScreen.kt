@@ -39,13 +39,12 @@ import br.com.fiap.edufin.components.BarraSuperior
 import br.com.fiap.edufin.components.SimulacaoItem
 import br.com.fiap.edufin.model.Indicador
 import br.com.fiap.edufin.navigation.Rota
-import br.com.fiap.edufin.navigation.navegarPara
 import br.com.fiap.edufin.repository.IndicadorRepository
 import br.com.fiap.edufin.ui.theme.EduFinTheme
 import br.com.fiap.edufin.util.formatarMoeda
 import br.com.fiap.edufin.util.formatarPercentual
 import br.com.fiap.edufin.util.formatarValor
-import br.com.fiap.edufin.util.paraValor
+import br.com.fiap.edufin.util.paraDouble
 import br.com.fiap.edufin.util.simularAportes
 
 private val APORTES_SUGERIDOS = listOf(50.0, 100.0, 200.0)
@@ -63,7 +62,7 @@ fun SimuladorInvestimentosScreen(navController: NavController) {
         bottomBar = {
             BarraNavegacao(
                 rotaAtual = Rota.SimuladorInvestimentos.caminho,
-                aoNavegar = { navController.navegarPara(it) }
+                aoNavegar = { rota -> navController.navigate(rota.caminho) }
             )
         }
     ) { paddingValues ->
@@ -83,7 +82,7 @@ private fun ConteudoSimulador(modifier: Modifier = Modifier) {
 
     val indicador = indicadores.getOrNull(indiceIndicador) ?: return
     val simulacoes = simularAportes(
-        aporteMensal = aporteTexto.paraValor() ?: 0.0,
+        aporteMensal = paraDouble(aporteTexto) ?: 0.0,
         taxaAnual = indicador.valor
     )
 
@@ -197,7 +196,7 @@ private fun CampoAporte(
                 APORTES_SUGERIDOS.forEach { sugestao ->
                     Etiqueta(
                         texto = formatarMoeda(sugestao),
-                        selecionada = valor.paraValor() == sugestao,
+                        selecionada = paraDouble(valor) == sugestao,
                         aoClicar = { aoMudar(formatarValor(sugestao)) }
                     )
                 }

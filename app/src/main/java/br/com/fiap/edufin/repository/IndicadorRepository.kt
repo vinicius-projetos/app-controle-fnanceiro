@@ -29,7 +29,7 @@ object IndicadorRepository {
             val taxas = api.getTaxas()
             indicadores = mapearTaxas(taxas)
             veioDaApi = true
-        } catch (_: Exception) {
+        } catch (e: Exception) {
             veioDaApi = false
         }
     }
@@ -46,30 +46,41 @@ private fun indicadoresLocais() = listOf(
 
 private fun mapearTaxas(taxas: List<TaxaResponse>): List<Indicador> {
     val hoje = LocalDate.now()
-    val selic = taxas.valorDe("Selic")
-    val cdi = taxas.valorDe("CDI")
-    val ipca = taxas.valorDe("IPCA")
+    val selic = buscarTaxa(taxas, "Selic") ?: 15.00
+    val cdi = buscarTaxa(taxas, "CDI") ?: 14.90
+    val ipca = buscarTaxa(taxas, "IPCA") ?: 4.62
 
     return listOf(
-        Indicador(1, "SELIC", "Taxa básica de juros", selic ?: 15.00, hoje),
-        Indicador(2, "CDI", "Certificado de Depósito Interbancário", cdi ?: 14.90, hoje),
-        Indicador(3, "IPCA", "Inflação oficial", ipca ?: 4.62, hoje),
+        Indicador(1, "SELIC", "Taxa básica de juros", selic, hoje),
+        Indicador(2, "CDI", "Certificado de Depósito Interbancário", cdi, hoje),
+        Indicador(3, "IPCA", "Inflação oficial", ipca, hoje),
         Indicador(
             id = 4,
             sigla = "POUPANÇA",
             nome = "Rendimento da caderneta",
-            valor = rendimentoPoupancaAnual(selic ?: 15.00),
+            valor = rendimentoPoupancaAnual(selic),
             atualizadoEm = hoje
         )
     )
 }
 
-private fun List<TaxaResponse>.valorDe(nome: String): Double? =
-    firstOrNull { it.nome.equals(nome, ignoreCase = true) }?.valor
+private fun buscarTaxa(taxas: List<TaxaResponse>, nome: String): Double? {
+    for (taxa in taxas) {
+        if (taxa.nome.equals(nome, ignoreCase = true)) {
+            return taxa.valor
+        }
+    }
+    return null
+}
 
 /**
  * Com SELIC acima de 8,5% ao ano, a caderneta rende 0,5% ao mês.
  * Abaixo disso, rende 70% da SELIC.
  */
-private fun rendimentoPoupancaAnual(selic: Double): Double =
-    if (selic > 8.5) ((1.005).pow(12) - 1) * 100 else selic * 0.7
+private fun rendimentoPoupancaAnual(selic: Double): Double {
+    return if (selic > 8.5) {
+        ((1.005).pow(12) - 1) * 100
+    } else {
+        selic * 0.7
+    }
+}

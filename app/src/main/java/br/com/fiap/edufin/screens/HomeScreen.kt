@@ -34,7 +34,6 @@ import br.com.fiap.edufin.model.Indicador
 import br.com.fiap.edufin.model.Meta
 import br.com.fiap.edufin.model.ResumoMensal
 import br.com.fiap.edufin.navigation.Rota
-import br.com.fiap.edufin.navigation.navegarPara
 import br.com.fiap.edufin.repository.IndicadorRepository
 import br.com.fiap.edufin.repository.OrcamentoRepository
 import br.com.fiap.edufin.repository.getAllMetas
@@ -58,12 +57,12 @@ fun HomeScreen(navController: NavController) {
         bottomBar = {
             BarraNavegacao(
                 rotaAtual = Rota.Painel.caminho,
-                aoNavegar = { navController.navegarPara(it) }
+                aoNavegar = { rota -> navController.navigate(rota.caminho) }
             )
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { navController.navegarPara(Rota.Orcamento) },
+                onClick = { navController.navigate(Rota.Orcamento.caminho) },
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary
             ) {

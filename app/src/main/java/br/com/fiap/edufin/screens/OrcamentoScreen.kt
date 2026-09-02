@@ -42,12 +42,11 @@ import br.com.fiap.edufin.components.BarraProgresso
 import br.com.fiap.edufin.components.BarraSuperior
 import br.com.fiap.edufin.components.GastoItem
 import br.com.fiap.edufin.navigation.Rota
-import br.com.fiap.edufin.navigation.navegarPara
 import br.com.fiap.edufin.repository.OrcamentoRepository
 import br.com.fiap.edufin.ui.theme.EduFinTheme
 import br.com.fiap.edufin.util.formatarMoeda
 import br.com.fiap.edufin.util.formatarValor
-import br.com.fiap.edufin.util.paraValor
+import br.com.fiap.edufin.util.paraDouble
 import kotlin.math.roundToInt
 
 @Composable
@@ -63,7 +62,7 @@ fun OrcamentoScreen(navController: NavController) {
         bottomBar = {
             BarraNavegacao(
                 rotaAtual = Rota.Orcamento.caminho,
-                aoNavegar = { navController.navegarPara(it) }
+                aoNavegar = { rota -> navController.navigate(rota.caminho) }
             )
         }
     ) { paddingValues ->
@@ -141,7 +140,7 @@ private fun CampoRenda(modifier: Modifier = Modifier) {
             value = rendaTexto,
             onValueChange = { texto ->
                 rendaTexto = texto
-                OrcamentoRepository.atualizarRenda(texto.paraValor() ?: 0.0)
+                OrcamentoRepository.atualizarRenda(paraDouble(texto) ?: 0.0)
             },
             label = { Text(text = stringResource(id = R.string.income_hint)) },
             prefix = { Text(text = "R$ ") },
@@ -216,7 +215,7 @@ private fun FormularioGasto(modifier: Modifier = Modifier) {
     var nome by remember { mutableStateOf("") }
     var valor by remember { mutableStateOf("") }
     val focusManager = LocalFocusManager.current
-    val podeAdicionar = nome.isNotBlank() && (valor.paraValor() ?: 0.0) > 0.0
+    val podeAdicionar = nome.isNotBlank() && (paraDouble(valor) ?: 0.0) > 0.0
 
     CartaoBranco(modifier = modifier) {
         OutlinedTextField(
@@ -241,7 +240,7 @@ private fun FormularioGasto(modifier: Modifier = Modifier) {
             onClick = {
                 OrcamentoRepository.adicionarGasto(
                     nome = nome.trim(),
-                    valor = valor.paraValor() ?: 0.0
+                    valor = paraDouble(valor) ?: 0.0
                 )
                 nome = ""
                 valor = ""

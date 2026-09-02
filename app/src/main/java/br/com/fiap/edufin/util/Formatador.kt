@@ -24,10 +24,15 @@ fun formatarData(data: LocalDate): String =
  * Aceita tanto "1.234,56" quanto "1234.56", já que o teclado numérico do Android
  * oferece os dois separadores dependendo do aparelho.
  */
-fun String.paraValor(): Double? {
-    val texto = trim()
-    if (texto.isEmpty()) return null
-    val normalizado =
-        if (texto.contains(',')) texto.replace(".", "").replace(',', '.') else texto
+fun paraDouble(texto: String): Double? {
+    val limpo = texto.trim()
+    if (limpo.isEmpty()) return null
+
+    val normalizado = if (limpo.contains(",")) {
+        limpo.replace(".", "").replace(",", ".")
+    } else {
+        limpo
+    }
+
     return normalizado.toDoubleOrNull()
 }

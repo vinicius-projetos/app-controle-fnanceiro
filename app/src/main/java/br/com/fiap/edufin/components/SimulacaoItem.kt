@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import br.com.fiap.edufin.R
@@ -36,6 +35,12 @@ fun SimulacaoItem(
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
+        val textoPeriodo = if (simulacao.anos == 1) {
+            stringResource(id = R.string.year_one)
+        } else {
+            stringResource(id = R.string.year_many, simulacao.anos)
+        }
+
         Column(modifier = Modifier.padding(20.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -43,11 +48,7 @@ fun SimulacaoItem(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = pluralStringResource(
-                        id = R.plurals.years,
-                        count = simulacao.anos,
-                        simulacao.anos
-                    ),
+                    text = textoPeriodo,
                     style = MaterialTheme.typography.titleSmall,
                     color = MaterialTheme.colorScheme.onSurface
                 )

@@ -1,6 +1,5 @@
 package br.com.fiap.edufin.model
 
-import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color
 import br.com.fiap.edufin.R
 import br.com.fiap.edufin.ui.theme.StatusCritical
@@ -8,7 +7,7 @@ import br.com.fiap.edufin.ui.theme.StatusGood
 import br.com.fiap.edufin.ui.theme.StatusWarning
 
 enum class NivelSaude(
-    @param:StringRes val descricao: Int,
+    val descricao: Int,
     val cor: Color
 ) {
     BOA(R.string.health_good, StatusGood),

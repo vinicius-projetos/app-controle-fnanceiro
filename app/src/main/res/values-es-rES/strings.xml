@@ -50,10 +50,22 @@
     <string name="you_save">Tú guardas</string>
     <string name="it_yields">Rinde</string>
     <string name="simulator_disclaimer">Interés compuesto sobre la tasa de hoy. La rentabilidad pasada no garantiza resultados futuros.</string>
-    <plurals name="years">
-        <item quantity="one">En %1$d año</item>
-        <item quantity="other">En %1$d años</item>
-    </plurals>
+    <string name="year_one">En 1 año</string>
+    <string name="year_many">En %1$d años</string>
+
+    <!-- Calculadora de dívidas -->
+    <string name="debts_title">Calculadora de Deudas</string>
+    <string name="debts_intro">Entiende cuánto puede costar realmente tu deuda.</string>
+    <string name="debt_value">Valor de la deuda</string>
+    <string name="debt_rate">Tasa de interés mensual</string>
+    <string name="debt_period">Período</string>
+    <string name="debt_months">meses</string>
+    <string name="debt_calculate">Calcular deuda</string>
+    <string name="debt_result">Resultado de la simulación</string>
+    <string name="debt_initial">Valor inicial: %1$s</string>
+    <string name="debt_interest">Total de intereses: %1$s</string>
+    <string name="debt_final">Valor final: %1$s</string>
+    <string name="debt_interest_share">Los intereses representan el %1$s%% del valor final de la deuda.</string>
 
     <!-- Navegação -->
     <string name="nav_dashboard">Panel</string>

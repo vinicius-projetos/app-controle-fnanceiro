@@ -50,10 +50,22 @@
     <string name="you_save">Você guarda</string>
     <string name="it_yields">Rende</string>
     <string name="simulator_disclaimer">Juros compostos sobre a taxa de hoje. Rentabilidade passada não garante resultado futuro.</string>
-    <plurals name="years">
-        <item quantity="one">Em %1$d ano</item>
-        <item quantity="other">Em %1$d anos</item>
-    </plurals>
+    <string name="year_one">Em 1 ano</string>
+    <string name="year_many">Em %1$d anos</string>
+
+    <!-- Calculadora de dívidas -->
+    <string name="debts_title">Calculadora de Dívidas</string>
+    <string name="debts_intro">Entenda quanto sua dívida realmente pode custar.</string>
+    <string name="debt_value">Valor da dívida</string>
+    <string name="debt_rate">Taxa de juros mensal</string>
+    <string name="debt_period">Período</string>
+    <string name="debt_months">meses</string>
+    <string name="debt_calculate">Calcular dívida</string>
+    <string name="debt_result">Resultado da simulação</string>
+    <string name="debt_initial">Valor inicial: %1$s</string>
+    <string name="debt_interest">Total de juros: %1$s</string>
+    <string name="debt_final">Valor final: %1$s</string>
+    <string name="debt_interest_share">Os juros representam %1$s%% do valor final da dívida.</string>
 
     <!-- Navegação -->
     <string name="nav_dashboard">Painel</string>

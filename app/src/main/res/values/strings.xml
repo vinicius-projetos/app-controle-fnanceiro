@@ -49,10 +49,22 @@
     <string name="you_save">You save</string>
     <string name="it_yields">It yields</string>
     <string name="simulator_disclaimer">Compound interest over today\'s rate. Past returns do not guarantee future results.</string>
-    <plurals name="years">
-        <item quantity="one">In %1$d year</item>
-        <item quantity="other">In %1$d years</item>
-    </plurals>
+    <string name="year_one">In 1 year</string>
+    <string name="year_many">In %1$d years</string>
+
+    <!-- Calculadora de dívidas -->
+    <string name="debts_title">Debt calculator</string>
+    <string name="debts_intro">Understand how much your debt can really cost.</string>
+    <string name="debt_value">Debt amount</string>
+    <string name="debt_rate">Monthly interest rate</string>
+    <string name="debt_period">Period</string>
+    <string name="debt_months">months</string>
+    <string name="debt_calculate">Calculate debt</string>
+    <string name="debt_result">Simulation result</string>
+    <string name="debt_initial">Initial amount: %1$s</string>
+    <string name="debt_interest">Total interest: %1$s</string>
+    <string name="debt_final">Final amount: %1$s</string>
+    <string name="debt_interest_share">Interest is %1$s%% of the final debt amount.</string>
 
     <!-- Navegação -->
     <string name="nav_dashboard">Dashboard</string>

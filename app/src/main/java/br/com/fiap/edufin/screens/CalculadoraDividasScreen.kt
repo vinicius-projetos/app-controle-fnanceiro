@@ -31,10 +31,10 @@ import br.com.fiap.edufin.R
 import br.com.fiap.edufin.components.BarraNavegacao
 import br.com.fiap.edufin.components.BarraSuperior
 import br.com.fiap.edufin.navigation.Rota
-import br.com.fiap.edufin.navigation.navegarPara
 import br.com.fiap.edufin.ui.theme.EduFinTheme
-import java.text.NumberFormat
-import java.util.Locale
+import br.com.fiap.edufin.util.formatarMoeda
+import br.com.fiap.edufin.util.formatarValor
+import br.com.fiap.edufin.util.paraDouble
 import kotlin.math.pow
 
 @Composable
@@ -45,7 +45,7 @@ fun CalculadoraDividasScreen(navController: NavController) {
 
         topBar = {
             BarraSuperior(
-                titulo = "Calculadora de Dívidas",
+                titulo = stringResource(id = R.string.debts_title),
                 subtitulo = stringResource(id = R.string.app_name)
             )
         },
@@ -53,7 +53,7 @@ fun CalculadoraDividasScreen(navController: NavController) {
         bottomBar = {
             BarraNavegacao(
                 rotaAtual = Rota.CalculadoraDividas.caminho,
-                aoNavegar = { navController.navegarPara(it) }
+                aoNavegar = { rota -> navController.navigate(rota.caminho) }
             )
         }
 
@@ -82,11 +82,8 @@ private fun CalculadoraDividasConteudo(
     var mostrarResultado by remember { mutableStateOf(false) }
 
     val dadosValidos =
-        valorDivida.paraDouble() != null &&
-                taxaJuros.paraDouble() != null &&
-                periodoMeses.toIntOrNull() != null &&
-                (valorDivida.paraDouble() ?: 0.0) > 0 &&
-                (taxaJuros.paraDouble() ?: 0.0) >= 0 &&
+        (paraDouble(valorDivida) ?: 0.0) > 0 &&
+                (paraDouble(taxaJuros) ?: -1.0) >= 0 &&
                 (periodoMeses.toIntOrNull() ?: 0) > 0
 
     Column(
@@ -95,7 +92,7 @@ private fun CalculadoraDividasConteudo(
     ) {
 
         Text(
-            text = "Entenda quanto sua dívida realmente pode custar.",
+            text = stringResource(id = R.string.debts_intro),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.secondary
         )
@@ -107,7 +104,7 @@ private fun CalculadoraDividasConteudo(
                 mostrarResultado = false
             },
             label = {
-                Text(text = "Valor da dívida")
+                Text(text = stringResource(id = R.string.debt_value))
             },
             prefix = {
                 Text(text = "R$ ")
@@ -126,7 +123,7 @@ private fun CalculadoraDividasConteudo(
                 mostrarResultado = false
             },
             label = {
-                Text(text = "Taxa de juros mensal")
+                Text(text = stringResource(id = R.string.debt_rate))
             },
             suffix = {
                 Text(text = "%")
@@ -145,10 +142,10 @@ private fun CalculadoraDividasConteudo(
                 mostrarResultado = false
             },
             label = {
-                Text(text = "Período")
+                Text(text = stringResource(id = R.string.debt_period))
             },
             suffix = {
-                Text(text = "meses")
+                Text(text = stringResource(id = R.string.debt_months))
             },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Number
@@ -160,26 +157,22 @@ private fun CalculadoraDividasConteudo(
         Button(
             onClick = {
 
-                valorInicial = valorDivida.paraDouble() ?: 0.0
+                valorInicial = paraDouble(valorDivida) ?: 0.0
 
-                val taxa =
-                    (taxaJuros.paraDouble() ?: 0.0) / 100.0
+                val taxa = (paraDouble(taxaJuros) ?: 0.0) / 100.0
 
-                val meses =
-                    periodoMeses.toIntOrNull() ?: 0
+                val meses = periodoMeses.toIntOrNull() ?: 0
 
-                valorFinal =
-                    valorInicial * (1 + taxa).pow(meses)
+                valorFinal = valorInicial * (1 + taxa).pow(meses)
 
-                totalJuros =
-                    valorFinal - valorInicial
+                totalJuros = valorFinal - valorInicial
 
                 mostrarResultado = true
             },
             enabled = dadosValidos,
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Calcular dívida")
+            Text(text = stringResource(id = R.string.debt_calculate))
         }
 
         if (mostrarResultado) {
@@ -217,21 +210,30 @@ private fun ResultadoDivida(
         ) {
 
             Text(
-                text = "Resultado da simulação",
+                text = stringResource(id = R.string.debt_result),
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold
             )
 
             Text(
-                text = "Valor inicial: ${formatarMoeda(valorInicial)}"
+                text = stringResource(
+                    id = R.string.debt_initial,
+                    formatarMoeda(valorInicial)
+                )
             )
 
             Text(
-                text = "Total de juros: ${formatarMoeda(totalJuros)}"
+                text = stringResource(
+                    id = R.string.debt_interest,
+                    formatarMoeda(totalJuros)
+                )
             )
 
             Text(
-                text = "Valor final: ${formatarMoeda(valorFinal)}",
+                text = stringResource(
+                    id = R.string.debt_final,
+                    formatarMoeda(valorFinal)
+                ),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.primary,
                 fontWeight = FontWeight.Bold
@@ -239,42 +241,19 @@ private fun ResultadoDivida(
 
             if (valorFinal > 0) {
 
-                val percentualJuros =
-                    (totalJuros / valorFinal) * 100
+                val percentualJuros = (totalJuros / valorFinal) * 100
 
                 Text(
-                    text =
-                        "Os juros representam " +
-                                String.format(
-                                    Locale("pt", "BR"),
-                                    "%.1f",
-                                    percentualJuros
-                                ) +
-                                "% do valor final da dívida.",
+                    text = stringResource(
+                        id = R.string.debt_interest_share,
+                        formatarValor(percentualJuros)
+                    ),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.secondary
                 )
             }
         }
     }
-}
-
-private fun String.paraDouble(): Double? {
-
-    return this
-        .trim()
-        .replace(".", "")
-        .replace(",", ".")
-        .toDoubleOrNull()
-}
-
-private fun formatarMoeda(valor: Double): String {
-
-    val formato = NumberFormat.getCurrencyInstance(
-        Locale("pt", "BR")
-    )
-
-    return formato.format(valor)
 }
 
 @Preview(
