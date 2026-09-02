@@ -12,7 +12,9 @@ import androidx.navigation.compose.rememberNavController
 import br.com.fiap.edufin.navigation.Rota
 import br.com.fiap.edufin.repository.IndicadorRepository
 import br.com.fiap.edufin.screens.CalculadoraDividasScreen
+import br.com.fiap.edufin.screens.HistóricoScreen
 import br.com.fiap.edufin.screens.HomeScreen
+import br.com.fiap.edufin.screens.MetasScreen
 import br.com.fiap.edufin.screens.OrcamentoScreen
 import br.com.fiap.edufin.screens.SimuladorInvestimentosScreen
 import br.com.fiap.edufin.ui.theme.EduFinTheme
@@ -43,13 +45,20 @@ fun EduFinApp() {
         navController = navController,
         startDestination = Rota.Painel.caminho
     ) {
-
         composable(Rota.Painel.caminho) {
             HomeScreen(navController)
         }
 
         composable(Rota.Orcamento.caminho) {
             OrcamentoScreen(navController)
+        }
+
+        composable(Rota.Metas.caminho) {
+            MetasScreen(navController)
+        }
+
+        composable(Rota.Historico.caminho) {
+            HistóricoScreen(navController)
         }
 
         composable(Rota.CalculadoraDividas.caminho) {

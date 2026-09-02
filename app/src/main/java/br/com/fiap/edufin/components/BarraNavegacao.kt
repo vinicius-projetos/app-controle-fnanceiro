@@ -108,11 +108,9 @@ fun BarraNavegacao(
             colors = cores
         )
 
-        // Metas ganhará uma rota quando a tela for construída.
         NavigationBarItem(
-            selected = false,
-            enabled = false,
-            onClick = { },
+            selected = rotaAtual == Rota.Metas.caminho,
+            onClick = { aoNavegar(Rota.Metas) },
             icon = {
                 Icon(
                     imageVector = Icons.Default.Flag,
